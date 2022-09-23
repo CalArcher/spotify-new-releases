@@ -1,0 +1,114 @@
+html {
+  background: var(--spotify-background-gradient);
+  color: var(--spotify-white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  height: 100%;
+}
+:root {
+  --spotify-green: rgb(50, 209, 90);
+  --spotify-background-gradient: linear-gradient(354deg, rgba(0, 0, 0, 0.9) 3%, rgba(0, 0, 0, 0.9) 64%, rgba(40, 148, 67, 1) 95%);
+  --thin-green: rgba(50, 209, 90, 0.25);
+  --spotify-black: rgb(19, 19, 19);
+  --thin-black: rgba(19, 19, 19, 0.65);
+  --transparent-black-gradient: linear-gradient(
+    90deg,
+    rgba(255, 255, 0, 0) 0%,
+    rgba(0, 0, 0, 0.9) 46%,
+    rgba(0, 0, 0, 0.9) 54%,
+    rgba(238, 130, 238, 0) 100%
+  );
+  --spotify-white: rgb(222, 222, 222);
+  --thin-white: rgb(222, 222, 222, 0.25);
+}
+/* ------
+App.js
+------ */
+.home-cont {
+  margin: 5rem 1rem 0 1rem;
+}
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 9rem 0 15rem 0;
+}
+/* ------
+SpotifyCards.js
+------ */
+.album-cards-container {
+  width: 90%;
+  display: flex;
+  overflow-x: scroll;
+  margin-left: auto;
+  margin-right: auto;
+}
+.album-cards-container::-webkit-scrollbar {
+  background-color: transparent;
+  border-radius: 7rem;
+}
+.album-cards-container::-webkit-scrollbar:hover {
+  border: 1px solid var(--thin-green);
+}
+.album-cards-container::-webkit-scrollbar-thumb {
+  background-color: var(--spotify-green);
+  border-radius: 7rem;
+}
+/* ------
+SpotifyCardTemplate.js
+------ */
+.album-card {
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+.album-card:hover {
+  border: 2px solid var(--thin-white);
+  border-radius: 5px;
+}
+.album-art {
+  position: relative;
+}
+.album-name {
+  margin: 0;
+}
+.album-card:hover .hover-info {
+  display: flex;
+}
+.album-card:hover .album-background {
+  display: flex;
+}
+.album-background {
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--thin-black);
+  z-index: 50;
+}
+.hover-info {
+  display: none;
+  position: absolute;
+  text-align: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  padding: 0.5rem 0;
+  transform: translate(-50%, -50%);
+  background: var(--transparent-black-gradient);
+  z-index: 100;
+  width: 90%;
+}
+.artist-info {
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+.song-count {
+  padding-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 200;
+}
